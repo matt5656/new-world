@@ -1,0 +1,17 @@
+boolean addBatch(Batch b) throws ClassNotFoundException, SQLException {
+		Class.forName(driver);
+		Connection con = DriverManager.getConnection(url,user,pass);
+		PreparedStatement pstmt = con
+				.prepareStatement("insert into Batch_Dtls values(?,?,?,?)");
+		
+		
+		pstmt.setString(1, b.getBatchNum());
+		pstmt.setString(2, b.getLocation());
+		pstmt.setInt(3, b.getNumTrainees());
+		
+		int no=pstmt.executeUpdate();
+		if(no==1)
+			return true;
+		return false;
+		
+	}
