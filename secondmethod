@@ -13,7 +13,7 @@ boolean addTrainee(Trainee t) throws SQLException {
 			
 			}
 			catch (Exception e) {
-				// TODO: handle exception
+				
 			}
 			finally
 			{
